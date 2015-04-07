@@ -1,0 +1,25 @@
+{
+  "name": "ast-logger-print",
+  "version": "0.0.1",
+  "description": "ast-logger-print",
+  "main": "index.js",
+  "scripts": {
+    "patch": "npm version patch && npm publish && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azukiapp/ast-logger-print.git"
+  },
+  "license": "Apache License",
+  "bugs": {
+    "url": "https://github.com/azukiapp/ast-logger-print/issues"
+  },
+  "homepage": "https://github.com/azukiapp/ast-logger-print",
+  "dependencies": {
+    "debug": "^2.1.3"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 0.10"
+  }
+}

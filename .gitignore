@@ -1,0 +1,8 @@
+.grunt
+.lock-wscript
+*.log
+*.pid
+*.seed
+logs
+node_modules
+pids
