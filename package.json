@@ -1,25 +1,30 @@
 {
-  "name": "ast-logger-print",
+  "name": "debug-print",
   "version": "0.0.4",
-  "description": "ast-logger-print",
+  "description": "debug-print",
   "main": "index.js",
   "scripts": {
     "patch": "npm version patch && npm publish && git push"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/azukiapp/ast-logger-print.git"
+    "url": "https://github.com/azukiapp/debug-print.git"
   },
   "license": "Apache License",
   "bugs": {
-    "url": "https://github.com/azukiapp/ast-logger-print/issues"
+    "url": "https://github.com/azukiapp/debug-print/issues"
   },
-  "homepage": "https://github.com/azukiapp/ast-logger-print",
+  "homepage": "https://github.com/azukiapp/debug-print",
   "dependencies": {
     "debug": "^2.1.3"
   },
   "engineStrict": true,
   "engines": {
     "node": ">= 0.10"
+  },
+  "devDependencies": {
+    "azk-dev": "0.0.15",
+    "babel-runtime": "^5.1.10",
+    "gulp": "^3.8.11"
   }
 }
