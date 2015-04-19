@@ -1,6 +1,8 @@
+require('source-map-support').install();
+
 var azk_gulp = require('azk-dev/gulp')({
   cwd  : __dirname,
-  sourcemaps_path: "/mytest", // Custom path to prefix transpiled files
+  sourcemaps_path: "/debug-print", // Custom path to prefix transpiled files
   lint: [ "bin/**/*.js" ], // Extra files for the lint analyzer
 });
 

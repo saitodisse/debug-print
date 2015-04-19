@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/azukiapp/debug-print",
   "dependencies": {
+    "babel-runtime": "^5.1.10",
     "debug": "^2.1.3"
   },
   "engineStrict": true,
@@ -25,6 +26,7 @@
   "devDependencies": {
     "azk-dev": "0.0.15",
     "babel-runtime": "^5.1.10",
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "source-map-support": "^0.2.10"
   }
 }

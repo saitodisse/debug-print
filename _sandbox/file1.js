@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-/*--*/var debug = require('debug')('file1.js');     /*--debug-print--*/
-/*--*/var __astLoggerPrint__ = require('../index'); /*--debug-print--*/
+require('source-map-support').install();
 
 var inner = require('./folder/file2.js');
 
@@ -13,7 +12,7 @@ function sum(a, b) {
   /*--*/};                         /*--debug-print--*/
 
   /*--*/__debug_data__.return_data = a + b;        /*--debug-print--*/
-  /*--*/__astLoggerPrint__(debug, __debug_data__); /*--debug-print--*/
+  /*--*/require('../index').debug(__debug_data__, __filename); /*--debug-print--*/
   /*--*/return __debug_data__.return_data;         /*--debug-print--*/
 }
 
@@ -25,7 +24,7 @@ var times = function (options) {
   /*--*/};                          /*--debug-print--*/
 
   /*--*/__debug_data__.return_data = { result: options.a * options.b }; /*--debug-print--*/
-  /*--*/__astLoggerPrint__(debug, __debug_data__);                      /*--debug-print--*/
+  /*--*/require('../index').debug(__debug_data__, __filename);                      /*--debug-print--*/
   /*--*/return __debug_data__.return_data;                  /*--debug-print--*/
 };
 
