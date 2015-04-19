@@ -11,9 +11,9 @@ function sum(a, b) {
   /*--*/  line: {original_line: 9} /*--debug-print--*/
   /*--*/};                         /*--debug-print--*/
 
-  /*--*/__debug_data__.return_data = a + b;        /*--debug-print--*/
+  /*--*/__debug_data__.return_data = a + b;                    /*--debug-print--*/
   /*--*/require('../index').debug(__debug_data__, __filename); /*--debug-print--*/
-  /*--*/return __debug_data__.return_data;         /*--debug-print--*/
+  /*--*/return __debug_data__.return_data;                     /*--debug-print--*/
 }
 
 var times = function (options) {
@@ -24,8 +24,8 @@ var times = function (options) {
   /*--*/};                          /*--debug-print--*/
 
   /*--*/__debug_data__.return_data = { result: options.a * options.b }; /*--debug-print--*/
-  /*--*/require('../index').debug(__debug_data__, __filename);                      /*--debug-print--*/
-  /*--*/return __debug_data__.return_data;                  /*--debug-print--*/
+  /*--*/require('../index').debug(__debug_data__, __filename);          /*--debug-print--*/
+  /*--*/return __debug_data__.return_data;                              /*--debug-print--*/
 };
 
 // RUN async
