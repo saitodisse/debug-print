@@ -33,7 +33,7 @@ export default {
   debug(obj, subject, _custom_console_log) {
     if (!process.env.DEBUG) {
       // if no env.DEBUG go away
-      return;
+      return obj.return_data;
     }
 
     if (!this._debug_instances) {
@@ -47,7 +47,7 @@ export default {
     }
     if (!this._debug_instances[subject].enabled) {
       // if debug is disabled go away
-      return;
+      return obj.return_data;
     }
 
     if (_custom_console_log) {
@@ -78,6 +78,8 @@ export default {
     ].join('\n');
 
     log(final_log);
+
+    return obj.return_data;
   }
 
 };

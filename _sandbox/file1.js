@@ -5,27 +5,13 @@ require('source-map-support').install();
 var inner = require('./folder/file2.js');
 
 function sum(a, b) {
-  /*--*/var __debug_data__ = {     /*--debug-print--*/
-  /*--*/  name: 'sum',             /*--debug-print--*/
-  /*--*/  arguments: arguments,    /*--debug-print--*/
-  /*--*/  line: {original_line: 9} /*--debug-print--*/
-  /*--*/};                         /*--debug-print--*/
-
-  /*--*/__debug_data__.return_data = a + b;                    /*--debug-print--*/
-  /*--*/require('../index').debug(__debug_data__, __filename); /*--debug-print--*/
-  /*--*/return __debug_data__.return_data;                     /*--debug-print--*/
+  var __return__ = require('../index').debug({ name: 'sum', arguments: arguments, line: {original_line: 7}, return_data: a + b }, __filename);
+  return  __return__;
 }
 
 var times = function (options) {
-  /*--*/var __debug_data__ = {      /*--debug-print--*/
-  /*--*/  name: 'times',            /*--debug-print--*/
-  /*--*/  arguments: arguments,     /*--debug-print--*/
-  /*--*/  line: {original_line: 21} /*--debug-print--*/
-  /*--*/};                          /*--debug-print--*/
-
-  /*--*/__debug_data__.return_data = { result: options.a * options.b }; /*--debug-print--*/
-  /*--*/require('../index').debug(__debug_data__, __filename);          /*--debug-print--*/
-  /*--*/return __debug_data__.return_data;                              /*--debug-print--*/
+  var __return__ = require('../index').debug({ name: 'times', arguments: arguments, line: {original_line: 11}, return_data: { result: options.a * options.b } }, __filename);
+  return __return__;
 };
 
 // RUN async

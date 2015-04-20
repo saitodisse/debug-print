@@ -48,4 +48,19 @@ describe('debugPrint:', function() {
     });
   });
 
+  it('should debug() return return_data option', function () {
+    var _data = {
+      name: 'MY_INCREDIBLE_FUNCTION',
+      arguments: arguments,
+      line: {original_line: 9},
+      return_data: 1
+    };
+
+    var __return__ = debugPrint.debug(_data, 'NAME2', function (result) {
+      h.expect(result).to.match(/MY_INCREDIBLE_FUNCTION/);
+    });
+
+    h.expect(__return__).to.equal(1);
+  });
+
 });
