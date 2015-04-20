@@ -19,7 +19,7 @@ describe('debugPrint:', function() {
     h.expect(_debug).to.not.be.undefined;
   });
 
-  it('should log a message', function () {
+  it('should log a message', function (done) {
     var _debug = debugPrint._create('NAME', '*');
 
     var _data = {
@@ -29,12 +29,10 @@ describe('debugPrint:', function() {
       return_data: 1
     };
 
-    // mock() _console_log
-    _debug._console_log = function (obj) {
-      h.expect(obj).to.match(/MY_INCREDIBLE_FUNCTION/);
-    };
-
-    _debug.debug(_data);
+    _debug.debug(_data, null, function (result) {
+      h.expect(result).to.match(/MY_INCREDIBLE_FUNCTION/);
+      done();
+    });
   });
 
   it('should log a message without call create', function () {
@@ -45,7 +43,9 @@ describe('debugPrint:', function() {
       return_data: 1
     };
 
-    debugPrint.debug(_data, 'NAME2');
+    debugPrint.debug(_data, 'NAME2', function (result) {
+      h.expect(result).to.match(/MY_INCREDIBLE_FUNCTION/);
+    });
   });
 
 });
