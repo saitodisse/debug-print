@@ -1,0 +1,12 @@
+*.sublime-project
+.editorconfig
+.gitignore
+.jscsrc
+.jshintrc
+.npmignore
+.travis.yml
+gulpfile.js
+lib/spec
+_sandbox/
+spec/
+src/
