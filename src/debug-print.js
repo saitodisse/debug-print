@@ -1,5 +1,5 @@
 import DebugClass from './debug-class';
-
+var stringUtils = require('./string-utils');
 var util = require('util');
 
 export default {
@@ -27,7 +27,6 @@ export default {
 
   _custom_console_log(obj) {
     console.log(obj);
-    console.log('');
   },
 
   debug(obj, subject, _custom_console_log) {
@@ -59,6 +58,37 @@ export default {
     var log = this._debug_instances[subject];
     log.log = this._custom_console_log.bind(this); // don't forget to bind to console!
 
+    switch (process.env.DEBUG_STYLE) {
+      case '1':
+      case 'small':
+        log(this._print_small(obj));
+        break;
+      case '2':
+      case 'detail':
+        log(this._print_detail(obj));
+        break;
+      default:
+        log(this._print_small(obj));
+        break;
+    }
+
+    return obj.return_data;
+  },
+
+  _print_small(obj) {
+
+    var function_name = obj.name + ' (' + obj.line.original_line + ')';
+
+    var functionPadRightNumber = 30;
+    if (process.env.DEBUG_FUNCTION_PAD_RIGHT) {
+      functionPadRightNumber = Number(process.env.DEBUG_FUNCTION_PAD_RIGHT);
+    }
+    function_name = stringUtils.padRightWithDotsIfBigger(function_name, functionPadRightNumber);
+
+    return '    ' + function_name;
+  },
+
+  _print_detail(obj) {
     // print arguments
     var arguments_string = '';
     for (var i = 0; i < obj.arguments.length; i++) {
@@ -69,7 +99,7 @@ export default {
       }
     }
 
-    var final_log = [
+    return [
       '',
       '    ' + obj.line.original_line + ' | ' + obj.name + ' (' + arguments_string + ')',
       '      |   returned: ' + util.inspect(obj.return_data,
@@ -77,9 +107,6 @@ export default {
       '      |   time elapsed:',
     ].join('\n');
 
-    log(final_log);
-
-    return obj.return_data;
   }
 
 };
